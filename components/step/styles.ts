@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
   },
   details: {
     flex: 1,
+    marginLeft: 6
   },
   title: {
     fontSize: 16,
