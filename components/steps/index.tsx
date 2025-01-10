@@ -6,7 +6,7 @@ import { MapPin, QrCode, Ticket } from "lucide-react-native";
 export function Steps() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Veja como funciona:</Text>
+      <Text style={styles.title}>See how it works:</Text>
 
       <Step
         title="Find stores"

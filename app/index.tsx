@@ -9,11 +9,11 @@ export default function() {
     <View style={styles.container}>
       <Welcome />
       <Steps />
-      <Button onPress={() => router.navigate('/home')}>
-        <Button.Title>Começar</Button.Title>
+      <Button onPress={() => router.navigate("/home")}>
+        <Button.Title>Get started</Button.Title>
       </Button>
     </View>
-  )
+  );
 }
 
 export const styles = StyleSheet.create({

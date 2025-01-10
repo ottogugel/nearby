@@ -16,13 +16,22 @@ export function Category({
   isSelected = false,
   ...rest
 }: CategoryProps) {
-  const Icon = categoriesIcons[iconId]
+  const Icon = categoriesIcons[iconId];
 
   return (
-    <View>
-      <Pressable style={styles.container}>
-        <Icon size={16} height={16} color={colors.gray[600]} />
-        <Text style={styles.name}>{name}</Text>
+    <View >
+      <Pressable
+        style={[styles.container, isSelected && styles.containerSelected]}
+        {...rest}
+      >
+        <Icon
+          size={16}
+          height={16}
+          color={colors.gray[isSelected ? 100 : 400]}
+        />
+        <Text style={[styles.name, isSelected && styles.nameSelected]}>
+          {name}
+        </Text>
       </Pressable>
     </View>
   );

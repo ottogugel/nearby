@@ -4,14 +4,14 @@ import { styles } from "./styles";
 export function Welcome() {
   return (
     <View>
-      <Image source={require('@/assets/logo.png')} style={styles.logo} />
+      <Image source={require("@/assets/logo.png")} style={styles.logo} />
 
-      <Text style={styles.title}>Boas vindas ao Nearby!</Text>
+      <Text style={styles.title}>Welcome to Nearby!</Text>
 
       <Text style={styles.subtitle}>
-        Tenha cupons de vantagem para usar em {"\n"}
-        seus estabelecimentos favoritos.
+        Get advantage coupons to use at {"\n"}
+        your favorite stores.
       </Text>
     </View>
-  )
+  );
 }

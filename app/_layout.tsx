@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
-import { colors } from '@/styles/colors'
-
+import { StatusBar } from "expo-status-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
   useFonts,
   Rubik_600SemiBold,
@@ -8,7 +8,10 @@ import {
   Rubik_500Medium,
   Rubik_700Bold
 } from '@expo-google-fonts/rubik';
+
+import { colors } from "@/styles/colors";
 import { Loading } from "../components/loading";
+
 
 
 export default function Layout() {
@@ -25,11 +28,14 @@ export default function Layout() {
   }
 
   return (
+    <GestureHandlerRootView style={{flex: 1,}}>
+    <StatusBar style="dark" />
   <Stack
   screenOptions
   ={{ headerShown: false, contentStyle:
     { backgroundColor: colors.gray[100]
     }}}
   />
+  </GestureHandlerRootView>
   )
 }

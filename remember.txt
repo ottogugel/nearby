@@ -1,6 +1,8 @@
-[Notion] https://docs-rocketseat.notion.site/React-Native-Multiplataforma-149395da5770808bada7e6dd3dce7526
-[Figma] https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby
-[Lucide] https://lucide.dev/guide/packages/lucide-react-native
-[Google Fonts] npx expo install expo-font @expo-google-fonts/rubik
+[Notion](https://docs-rocketseat.notion.site/)React-Native-Multiplataforma-149395da5770808bada7e6dd3dce7526
+[Figma](https://www.figma.com/community/file/1448070647757721748/nlw-pocket-mobile-nearby)
+[Lucide](https://lucide.dev/guide/packages/lucide-react-native)
+[Google Fonts](npx expo install expo-font @expo-google-fonts/rubik)
+[React Native Bottom Sheet](https://gorhom.dev/react-native-bottom-sheet/)
+
 
 Quebra de linha {"\n}
