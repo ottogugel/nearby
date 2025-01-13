@@ -3,6 +3,7 @@ import { Place, PlaceProps } from '../place';
 import BottomSheet, { BottomSheetFlatList, BottomSheetView } from '@gorhom/bottom-sheet';
 import { useRef } from 'react';
 import { styles } from './styles';
+import { router } from 'expo-router';
 
 
 type Props = {
@@ -18,24 +19,23 @@ export function Places({ data }: Props) {
   }
 
   return (
-      <BottomSheet
+    <BottomSheet
       ref={bottomSheetRef}
       snapPoints={[snapPoints.min, snapPoints.max]}
       handleIndicatorStyle={styles.indicator}
       backgroundStyle={styles.container}
       enableOverDrag={false}
-      >
-        <BottomSheetFlatList
+    >
+      <BottomSheetFlatList
         data={data}
-        keyExtractor={(item)=>item.id}
-        renderItem={({item})=> <Place data={item} />}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Place data={item} onPress={() => router.navigate(`/market/${item.id}`)} />}
         contentContainerStyle={styles.container}
-        ListHeaderComponent={()=>(
-          <Text style={styles.title}>Explore locais perto de você</Text>
+        ListHeaderComponent={() => (
+          <Text style={styles.title}>Explore places near you</Text>
         )}
         showsVerticalScrollIndicator={false}
-        >
-        </BottomSheetFlatList>
-      </BottomSheet>
+      ></BottomSheetFlatList>
+    </BottomSheet>
   );
 }

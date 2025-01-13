@@ -3,6 +3,14 @@
 [Lucide](https://lucide.dev/guide/packages/lucide-react-native)
 [Google Fonts](npx expo install expo-font @expo-google-fonts/rubik)
 [React Native Bottom Sheet](https://gorhom.dev/react-native-bottom-sheet/)
+[React Native Maps](https://docs.expo.dev/versions/latest/sdk/map-view/)
+[Expo Camera](npx expo install expo-camera)
 
 
 Quebra de linha {"\n}
+
+Comentar: shift + alt + a
+
+Callout Solution: https://chaewonkong.github.io/posts/react-native-maps-ios-callout.html
+
+Um ponto ao lado de uma descrição \u2022

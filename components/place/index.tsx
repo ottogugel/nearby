@@ -7,7 +7,7 @@ export type PlaceProps = {
   id: string;
   name: string;
   description: string;
-  cupons: number;
+  coupons: number;
   cover: string;
   address: string;
 };
@@ -24,11 +24,13 @@ export function Place({ data, ...rest}: Props) {
 
           <View style={styles.content}>
             <Text style={styles.name}>{data.name}</Text>
-            <Text style={styles.description}>{data.description}</Text>
+            <Text style={styles.description} numberOfLines={2}>{data.description}</Text>
 
             <View style={styles.footer}>
-              <Ticket width={10} height={10} color={colors.red.base} />
-              <Text style={styles.tickets}>{data.cupons} coupons available</Text>
+              <Ticket size={16} color={colors.red.base} />
+              <Text style={styles.tickets}>
+                {data.coupons} coupons available
+              </Text>
             </View>
           </View>
         </TouchableOpacity>
