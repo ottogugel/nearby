@@ -1,7 +1,8 @@
 import { Text, View } from "react-native";
+import { MapPin, Phone, Ticket } from "lucide-react-native";
+
 import { styles } from "./styles";
 import { Info } from "../info";
-import { MapPin, Phone, Ticket } from "lucide-react-native";
 
 export type PropsDetails = {
   name: string;

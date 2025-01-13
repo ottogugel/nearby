@@ -14,6 +14,8 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: fontFamily.bold,
     color: colors.gray[600],
+    flexDirection: "row",
+    alignItems: "center",
   },
   description: {
     fontSize: 16,
@@ -50,4 +52,7 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
   },
   rule: {},
+  icon: {
+    marginRight: 8,
+  },
 });
