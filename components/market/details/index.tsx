@@ -48,9 +48,9 @@ export function Details({ data }: Props) {
 
         <Info
           icon={MapPin}
-          description="Alameda Jaú, 123. Centro, São Paulo - SP"
+          description={data.address}
         />
-        <Info icon={Phone} description="+55 (18) 2311-2149" />
+        <Info icon={Phone} description={data.phone} />
       </View>
 
       <View style={styles.group2}>

@@ -4,7 +4,7 @@ import { LucideProps } from "lucide-react-native";
 import { colors } from "@/styles/colors";
 
 type Props = {
-  description: string
+  description: string,
   icon: React.ComponentType<LucideProps>
 }
 

@@ -1,7 +1,7 @@
 import { api } from "@/services/api";
 import { Redirect, router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { Alert, Modal, ScrollView, View } from "react-native";
+import { Alert, Modal, ScrollView, Text, View } from "react-native";
 import { Loading } from "../../components/loading";
 import { Cover } from "../../components/market/cover";
 import { Details, PropsDetails } from "../../components/market/details";
@@ -13,7 +13,8 @@ import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
 
 
 type DataProps = PropsDetails & {
-  cover: string
+  cover: string,
+  id: string
 }
 
 export default function Market() {
@@ -29,7 +30,7 @@ export default function Market() {
   const params = useLocalSearchParams<{id: string}>()
 
   const qrLock = useRef(false)
-  console.log(params.id)
+
 
   async function fetchMarket() {
     try {
@@ -104,6 +105,7 @@ export default function Market() {
     <View style={{ flex: 1 }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Cover uri={data.cover} />
+
         <Details data={data} />
 
         {coupon && <Coupon code="FM4123T42" />}
@@ -118,7 +120,12 @@ export default function Market() {
           gap: 12,
         }}
       >
-        <Button style={{ width: 60 }}>
+        <Button
+        style={{ width: 60 }}
+        onPress={() => router.push({
+          pathname: '/location',
+          params: { id: data.id}
+        })}>
           <Button.icon icon={MapPin} />
         </Button>
 
