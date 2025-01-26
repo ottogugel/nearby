@@ -1,8 +1,9 @@
 import { Text, View } from "react-native";
-import { MapPin, Phone, Ticket } from "lucide-react-native";
+import { AlertCircle, MapPin, Phone, Ticket } from "lucide-react-native";
 
 import { styles } from "./styles";
 import { Info } from "../info";
+import { categoriesIcons } from "@/utils/categories-icons";
 
 export type PropsDetails = {
   name: string;
@@ -14,6 +15,7 @@ export type PropsDetails = {
     id: string;
     description: string;
   }[];
+  categoryId: string;
 };
 
 type Props = {
@@ -21,9 +23,16 @@ type Props = {
 }
 
 export function Details({ data }: Props) {
+
+  const Icon = categoriesIcons[data.categoryId];
+
   return (
     <View style={styles.container}>
-      <Text style={styles.name}>{data.name}</Text>
+      <Text style={styles.name}>
+        {data.name}{" "}
+        {Icon && <Icon size={20} color="#4CAF50" />}
+      </Text>
+
       <Text style={styles.description}>{data.description}</Text>
 
       <View style={styles.group}>
@@ -46,10 +55,7 @@ export function Details({ data }: Props) {
       <View style={styles.group}>
         <Text style={styles.title}>Informações</Text>
 
-        <Info
-          icon={MapPin}
-          description={data.address}
-        />
+        <Info icon={MapPin} description={data.address} />
         <Info icon={Phone} description={data.phone} />
       </View>
 

@@ -13,7 +13,7 @@ type Props = {
   onSelect: (id: string) => void;
 }
 export function Categories({ data, selected, onSelect }: Props) {
-  //console.log(data);
+
   return (
     <View>
       <FlatList

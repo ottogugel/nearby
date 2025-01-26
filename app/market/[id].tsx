@@ -1,15 +1,14 @@
 import { api } from "@/services/api";
 import { Redirect, router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import { Alert, Modal, ScrollView, Text, View } from "react-native";
+import { Alert, Modal, ScrollView, View } from "react-native";
 import { Loading } from "../../components/loading";
 import { Cover } from "../../components/market/cover";
 import { Details, PropsDetails } from "../../components/market/details";
 import { Coupon } from "../../components/market/coupon";
 import { Button } from "../../components/button";
 import { MapPin, ScanLineIcon } from "lucide-react-native";
-import { colors } from "@/styles/colors";
-import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
+import { CameraView, useCameraPermissions } from "expo-camera";
 
 
 type DataProps = PropsDetails & {
@@ -131,7 +130,7 @@ export default function Market() {
 
         <Button onPress={handleOpenCamera} style={{ width: 255 }}>
           <Button.icon icon={ScanLineIcon} />
-          <Button.Title>Ler QR Code</Button.Title>
+          <Button.Title>Scan QR Code</Button.Title>
         </Button>
       </View>
 

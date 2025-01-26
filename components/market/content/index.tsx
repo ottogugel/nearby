@@ -16,47 +16,26 @@ type Props = {
   data: ContentDetails | undefined;
 };
 
-
 export function Content({ data }: Props) {
-
-    const handlePhonePress = () => {
-      Linking.openURL("tel:+551823112149");
-    };
+  const handlePhonePress = () => {
+    Linking.openURL("tel:+551823112149");
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>{data?.name}</Text>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: colors.red.light,
-            borderRadius: 15,
-            paddingVertical: 3,
-            paddingHorizontal: 10,
-          }}
-        >
+        <View style={styles.ticket}>
           <Ticket size={16} color="red" />
-          <Text
-            style={{
-              fontSize: 14,
-              fontWeight: "bold",
-              color: "#FF5555",
-              marginLeft: 5,
-            }}
-          >
-            {data?.coupons}
-          </Text>
+          <Text style={styles.ticketText}>{data?.coupons}</Text>
         </View>
       </View>
-      <View style={{ marginTop: 20 }}>
-        <Text>
-          <MapPin size={16} color={colors.gray[500]} />
-          {data?.address}
+      <View style={styles.details}>
+        <Text style={styles.detailsText}>
+          <MapPin size={16} color={colors.gray[500]} /> {data?.address}
         </Text>
         <TouchableOpacity onPress={handlePhonePress}>
-          <Text style={{ fontSize: 14, marginTop: 5, color: colors.gray[500] }}>
+          <Text style={styles.detailsText}>
             <Phone size={16} color={colors.gray[500]} /> {data?.phone}
           </Text>
         </TouchableOpacity>

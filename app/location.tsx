@@ -1,13 +1,11 @@
-import { Alert, Linking, Text, TouchableOpacity, View } from "react-native";
-import { ArrowLeft, MapPin, Phone, Ticket } from "lucide-react-native";
+import { Alert, View } from "react-native";
+import { ArrowLeft } from "lucide-react-native";
 import { router } from "expo-router";
 import { Button } from "../components/button";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import { useEffect, useRef, useState } from "react";
-import { colors } from "@/styles/colors";
 import { useSearchParams } from "expo-router/build/hooks";
 import { api } from "@/services/api";
-import { PropsDetails } from "../components/market/details";
 import { Content, ContentDetails } from "../components/market/content";
 
 const currentLocation = {
@@ -20,6 +18,7 @@ type DataProps = ContentDetails & {
   phone: string;
   name: string;
   id: string;
+  categoryId: string;
 };
 
 
@@ -45,7 +44,8 @@ export default function Location() {
   // Pegar informações das lojas
   useEffect(() => {
     getStoreData()
-  })
+  }, [])
+
   // Pegar a localização da loja e definir no mapa.
   useEffect(() => {
     if (ref.current) {
@@ -70,7 +70,16 @@ export default function Location() {
           longitudeDelta: 0.01,
         }}
         ref={ref}
-      />
+      >
+        <Marker
+          identifier="current"
+          coordinate={{
+            latitude: currentLocation.latitude,
+            longitude: currentLocation.longitude,
+          }}
+          image={require("@/assets/pin.png")}
+        />
+      </MapView>
       <Button
         style={{
           position: "absolute",
@@ -83,9 +92,7 @@ export default function Location() {
       >
         <Button.icon icon={ArrowLeft} />
       </Button>
-
       <Content data={data} />
-
     </View>
   );
 }

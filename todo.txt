@@ -6,8 +6,4 @@ Se for liberado retornar o mapa, caso contrário aparecer uma mensagem
 - Verificar a possibilidade de ele pegar as lojas de forma automatica
 sem ter que ficar alimentando no back-end.
 
-- Ao acessar a loja e clicar no icone do PinMap ele ir ao mapa e ir na localização da loja e abrir um modal aparecendo o nome da loja, icone, quantos cupons disponiveis informação de endereço e telefone.
-
 - Verificar se a qtde de cupons disponiveis está certo na tela onde aparece as lojas e também ao acessar elas.
-
-- Verificar a possibilidade de pegar os icones do lado da descrição de acordo com sua categoria.

@@ -5,11 +5,12 @@ import { StyleSheet } from "react-native"
 export const styles = StyleSheet.create({
   container: {
     width:'100%',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   details: {
     flex: 1,
-    marginLeft: 6
+    marginLeft: 12,
+    marginTop: 2,
   },
   title: {
     fontSize: 16,

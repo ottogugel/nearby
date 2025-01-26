@@ -27,5 +27,26 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#000",
   },
-  code: {},
+  details: {
+    marginTop: 20,
+  },
+  detailsText: {
+    fontSize: 14,
+    marginTop: 5,
+    color: colors.gray[500],
+  },
+  ticket: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: colors.red.light,
+    borderRadius: 15,
+    paddingVertical: 3,
+    paddingHorizontal: 10,
+  },
+  ticketText: {
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "black",
+    marginLeft: 5,
+  },
 });
